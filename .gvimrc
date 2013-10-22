@@ -1,7 +1,7 @@
 colorscheme wombat
 
 if has('win32') || has('win64')
-    set guifont=VL_Gothic:h12:cDEFAULT
+    set guifont=Inconsolata\ for\ Powerline:h13:cDEFAULT
 endif
 
 source $VIMRUNTIME/delmenu.vim

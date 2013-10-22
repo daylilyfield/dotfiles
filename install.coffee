@@ -22,7 +22,7 @@ link.mklink = (src, dest, cb) ->
   d = path.join home, dest or src
   c = 'mklink'
   p = if fs.statSync(src).isDirectory() then '/d' else ''
-  exec "#{c} #{p} #{d} #{s}", cb
+  exec "mklink #{p} #{d} #{s}", cb
 # }}}
 
 link '.vimrc'

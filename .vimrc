@@ -6,17 +6,23 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'anyakichi/vim-surround.git'
-Bundle 'vim-jp/vimdoc-ja.git'
-Bundle 'Shougo/neocomplcache.git'
-Bundle 'vim-scripts/L9.git'
-Bundle 'Shougo/vimproc.git'
-Bundle 'Shougo/unite.vim.git'
-Bundle 'daylilyfield/sexyscroll.vim.git'
-Bundle 'scrooloose/nerdtree.git'
+Bundle 'anyakichi/vim-surround'
+Bundle 'vim-jp/vimdoc-ja'
+Bundle 'Shougo/neocomplcache'
+Bundle 'vim-scripts/L9'
+Bundle 'vim-scripts/Align'
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/unite.vim'
+Bundle 'daylilyfield/sexyscroll.vim'
+Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'daylilyfield/vim-colors-wombat.git'
+Bundle 'daylilyfield/vim-colors-wombat'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mileszs/ack.vim'
+Bundle 'groenewege/vim-less'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'tpope/vim-fugitive'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 
@@ -57,7 +63,7 @@ set title
 set cursorline
 set guioptions=erL
 
-set statusline=\ %<%f%(\ %m%)\ [B%n/%{g:get_buffer_count()}]%(\ %h%w%r%)\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ %=%l,%c%V\ %3P\ 
+"set statusline=\ %<%f%(\ %m%)\ [B%n/%{g:get_buffer_count()}]%(\ %h%w%r%)\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ %=%l,%c%V\ %3P\ 
 
 function! g:get_buffer_count()
     let last_buffer_number = bufnr('$')
@@ -130,3 +136,10 @@ nnoremap <Space>ur :<C-u>Unite file_mru<CR>
 
 " align settings
 let g:Align_xstrlen=3
+
+" airline
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#readonly#enabled = 1
