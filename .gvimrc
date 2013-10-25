@@ -1,6 +1,10 @@
 colorscheme wombat
 
-set guifont=Inconsolata\ for\ Powerline:h14
+if has('win32') || has('win64')
+  set guifont=Inconsolata\ for\ Powerline:h13:cDEFAULT
+elseif has('mac')
+  set guifont=Inconsolata\ for\ Powerline:h14
+endif
 
 source $VIMRUNTIME/delmenu.vim
 set langmenu=ja_jp.utf-8
