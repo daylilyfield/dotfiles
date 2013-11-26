@@ -124,6 +124,10 @@ vnoremap j gj
 vnoremap gk k
 vnoremap gj j
 
+autocmd BufNewFile,BufRead *.coffee set ts=2 sts=2 sw=2
+autocmd BufNewFile,BufRead *.xml set ts=1 sts=1 sw=1
+autocmd BufNewFile,BufRead *.html set ts=1 sts=1 sw=1
+
 let g:plugin_dicwin_disable=1
 
 " neocomplcache settings
