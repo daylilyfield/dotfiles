@@ -23,6 +23,8 @@ Bundle 'groenewege/vim-less'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
+Bundle 'wavded/vim-stylus'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 filetype plugin indent on
 
