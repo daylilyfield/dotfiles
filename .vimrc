@@ -25,6 +25,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'wavded/vim-stylus'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'digitaltoad/vim-jade'
 
 filetype plugin indent on
 
@@ -149,3 +150,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#readonly#enabled = 1
+
+" markdown vim mode
+let g:vim_markdown_folding_disabled=1
