@@ -26,6 +26,8 @@ Bundle 'bling/vim-airline'
 Bundle 'wavded/vim-stylus'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'majutsushi/tagbar'
+Bundle 'marijnh/tern_for_vim'
 
 filetype plugin indent on
 
