@@ -35,3 +35,5 @@ link '.tmux.conf'
 link '.inputrc'
 
 link '.gitignore-global', '.gitignore'
+
+link '.ctags'
