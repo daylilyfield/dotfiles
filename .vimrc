@@ -96,6 +96,14 @@ endif
 
 set directory=~/.vimswap
 
+set undofile
+
+if !isdirectory(expand('~/.vimundo'))
+    call mkdir(expand('~/.vimundo'))
+endif
+
+set undodir=~/.vimundo
+
 syntax on
 
 set autoindent
