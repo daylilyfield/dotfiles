@@ -140,6 +140,8 @@ vnoremap gj j
 autocmd BufNewFile,BufRead *.coffee setlocal ts=2 sts=2 sw=2
 autocmd BufNewFile,BufRead *.xml setlocal ts=1 sts=1 sw=1
 autocmd BufNewFile,BufRead *.html setlocal ts=1 sts=1 sw=1
+autocmd BufNewFile,BufRead *.jade setlocal ts=1 sts=1 sw=1
+autocmd BufNewFile,BufRead *.go setlocal ts=2 sts=2 sw=2 noexpandtab
 
 let g:plugin_dicwin_disable=1
 
