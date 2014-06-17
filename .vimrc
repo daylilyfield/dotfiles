@@ -28,6 +28,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'majutsushi/tagbar'
 Bundle 'marijnh/tern_for_vim'
+Bundle 'Shougo/neomru.vim'
 
 filetype plugin indent on
 
@@ -138,6 +139,7 @@ vnoremap gk k
 vnoremap gj j
 
 autocmd BufNewFile,BufRead *.coffee setlocal ts=2 sts=2 sw=2
+autocmd BufNewFile,BufRead *.styl setlocal ts=2 sts=2 sw=2
 autocmd BufNewFile,BufRead *.xml setlocal ts=1 sts=1 sw=1
 autocmd BufNewFile,BufRead *.html setlocal ts=1 sts=1 sw=1
 autocmd BufNewFile,BufRead *.jade setlocal ts=1 sts=1 sw=1
