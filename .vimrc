@@ -167,3 +167,7 @@ let g:airline#extensions#readonly#enabled = 1
 
 " markdown vim mode
 let g:vim_markdown_folding_disabled=1
+
+" indent-guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
