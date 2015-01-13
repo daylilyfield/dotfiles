@@ -29,6 +29,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'majutsushi/tagbar'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'Shougo/neomru.vim'
+Bundle 'vim-scripts/DirDiff.vim.git'
 
 filetype plugin indent on
 
@@ -138,7 +139,10 @@ vnoremap j gj
 vnoremap gk k
 vnoremap gj j
 
+autocmd BufNewFile,BufRead *.js setlocal ts=2 sts=2 sw=2
+autocmd BufNewFile,BufRead *.json setlocal ts=2 sts=2 sw=2
 autocmd BufNewFile,BufRead *.coffee setlocal ts=2 sts=2 sw=2
+autocmd BufNewFile,BufRead *.cson setlocal ts=2 sts=2 sw=2
 autocmd BufNewFile,BufRead *.styl setlocal ts=2 sts=2 sw=2
 autocmd BufNewFile,BufRead *.xml setlocal ts=1 sts=1 sw=1
 autocmd BufNewFile,BufRead *.html setlocal ts=1 sts=1 sw=1
