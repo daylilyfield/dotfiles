@@ -69,20 +69,6 @@ set showcmd
 set title
 set cursorline
 set guioptions=erL
-
-"set statusline=\ %<%f%(\ %m%)\ [B%n/%{g:get_buffer_count()}]%(\ %h%w%r%)\ %{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}\ %=%l,%c%V\ %3P\ 
-
-function! g:get_buffer_count()
-    let last_buffer_number = bufnr('$')
-    let active_buffer_count = 0
-    let i = 0 | while i <= last_buffer_number | let i = i + 1
-        if bufexists(i) && buflisted(i)
-            let active_buffer_count = active_buffer_count + 1
-        endif
-    endwhile
-    return active_buffer_count
-endfunction
-
 set foldenable
 set foldmethod=marker
 set shortmess=aTI
@@ -134,6 +120,9 @@ nnoremap j gj
 nnoremap gk k
 nnoremap gj j
 
+nnoremap gb :bn<CR>
+nnoremap gB :bp<CR>
+
 vnoremap k gk
 vnoremap j gj
 vnoremap gk k
@@ -148,6 +137,23 @@ autocmd BufNewFile,BufRead *.xml setlocal ts=1 sts=1 sw=1
 autocmd BufNewFile,BufRead *.html setlocal ts=1 sts=1 sw=1
 autocmd BufNewFile,BufRead *.jade setlocal ts=1 sts=1 sw=1
 autocmd BufNewFile,BufRead *.go setlocal ts=2 sts=2 sw=2 noexpandtab
+
+command! -nargs=0 CopyFilePath call s:copy_file_path()
+command! -nargs=0 CopyFileName call s:copy_file_name()
+
+  function! s:copy_file_path()
+    let l:p = expand('%:p')
+    let @* = l:p
+    let @" = l:p
+    echo l:p
+  endf
+  
+  function! s:copy_file_name()
+    let l:n = expand('%:t')
+    let @* = l:n
+    let @" = l:n
+    echo l:n
+  endf
 
 let g:plugin_dicwin_disable=1
 
