@@ -1,4 +1,5 @@
-colorscheme wombat
+set background=dark
+colorscheme gruvbox
 
 if has('win32') || has('win64')
   set guifont=Inconsolata\ for\ Powerline:h13:cDEFAULT
