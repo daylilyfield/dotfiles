@@ -21,7 +21,6 @@ Bundle 'morhetz/gruvbox'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'mileszs/ack.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-fugitive'
@@ -33,6 +32,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'Shougo/neomru.vim'
 Bundle 'vim-scripts/DirDiff.vim.git'
+Bundle 'rking/ag.vim'
 
 filetype plugin indent on
 
