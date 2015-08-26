@@ -7,7 +7,7 @@
 
 [core]
     autocrlf = input
-    editor = gvim
+    editor = /Applications/MacVim.app/Contents/MacOS/mvim -f
 
 [diff]
     tool = vim-diff
@@ -16,7 +16,7 @@
     prompt = false
 
 [difftool "vim-diff"]
-    cmd = gvim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
+    cmd = /Applications/MacVim.app/Contents/MacOS/mvim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
 
 [alias]
     co = checkout

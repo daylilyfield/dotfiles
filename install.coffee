@@ -32,6 +32,8 @@ link '.vim', 'vimfiles' if platform is 'win32'
 
 link '.tmux.conf'
 
+link '.bashrc'
+
 link '.inputrc'
 
 link '.gitconfig'

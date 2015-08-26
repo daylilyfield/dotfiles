@@ -28,6 +28,10 @@ Plug 'kannokanno/previm'
 
 call plug#end()
 
+set t_Co=256
+colorscheme gruvbox
+set background=dark
+
 set encoding=UTF-8
 set autoread
 set hlsearch
@@ -71,21 +75,7 @@ set shortmess=aTI
 set history=100
 set nowritebackup
 set nobackup
-
-set background=dark
-
-try
-  colorscheme gruvbox
-catch
-endtry
-
-set swapfile
-
-if !isdirectory(expand('~/.vimswap'))
-    call mkdir(expand('~/.vimswap'))
-endif
-
-set directory=~/.vimswap
+set noswapfile
 
 set undofile
 
