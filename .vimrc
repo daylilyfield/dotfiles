@@ -130,7 +130,7 @@ vnoremap j gj
 vnoremap gk k
 vnoremap gj j
 
-vnoremap v $h
+vnoremap v ^$h
 
 autocmd BufNewFile,BufRead *.js setlocal ts=2 sts=2 sw=2
 autocmd BufNewFile,BufRead *.json setlocal ts=2 sts=2 sw=2

@@ -30,6 +30,8 @@ link '.gvimrc'
 link '.vim'
 link '.vim', 'vimfiles' if platform is 'win32'
 
+link '.ideavimrc'
+
 link '.tmux.conf'
 
 link '.bashrc'
