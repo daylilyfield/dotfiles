@@ -1,5 +1,5 @@
 set rtp+=~/.vim/bundle/vim-plug/
-call plug#begin('.vim/bundle')
+call plug#begin('~/.vim/bundle')
 
 Plug 'anyakichi/vim-surround'
 Plug 'vim-jp/vimdoc-ja'
@@ -28,9 +28,11 @@ Plug 'kannokanno/previm'
 
 call plug#end()
 
+syntax on
+
 set t_Co=256
-colorscheme gruvbox
 set background=dark
+colorscheme gruvbox
 
 set encoding=UTF-8
 set autoread
@@ -84,8 +86,6 @@ if !isdirectory(expand('~/.vimundo'))
 endif
 
 set undodir=~/.vimundo
-
-syntax on
 
 set autoindent
 set smartindent
