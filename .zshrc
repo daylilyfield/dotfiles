@@ -3,6 +3,14 @@ export LANG=ja_JP.UTF-8
 export PATH=/usr/local/bin:$PATH
 export TERM=xterm-256color
 
+ANDROID_SDK_HOME="/Users/daylilyfield/Library/Android/sdk"
+
+export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# Aliases
+alias la='ls -al'
+
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
@@ -161,4 +169,8 @@ case ${OSTYPE} in
         ;;
 esac
 
-# vim:set ft=zsh:
+# Android
+attachToWearable() {
+  adb -d forward tcp:5601 tcp:5601
+}
+
