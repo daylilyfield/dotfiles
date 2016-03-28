@@ -1,5 +1,6 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
+export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export PATH=/usr/local/bin:$PATH
 export TERM=xterm-256color
 
@@ -9,6 +10,8 @@ export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # Aliases
+alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias la='ls -al'
 
 # 色を使用出来るようにする
