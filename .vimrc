@@ -19,7 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'wavded/vim-stylus', {'for': 'styl'}
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'digitaltoad/vim-jade', {'for': 'jade'}
+Plug 'digitaltoad/vim-jade'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/DirDiff.vim'
 Plug 'rking/ag.vim', {'on': 'Ag'}
@@ -202,3 +202,5 @@ nmap <C-n> <Plug>(yankround-next)
 " previm
 let g:previm_open_cmd = 'open /Applications/Google\ Chrome.app'
 
+" syntastic
+let g:syntastic_javascript_checkers = ['eslint']
