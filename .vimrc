@@ -1,5 +1,5 @@
 set rtp+=~/.vim/bundle/vim-plug/
-call plug#begin('.vim/bundle')
+call plug#begin('~/.vim/bundle')
 
 Plug 'anyakichi/vim-surround'
 Plug 'vim-jp/vimdoc-ja'
@@ -28,9 +28,11 @@ Plug 'kannokanno/previm'
 
 call plug#end()
 
+syntax on
+
 set t_Co=256
-colorscheme gruvbox
 set background=dark
+colorscheme gruvbox
 
 set encoding=UTF-8
 set autoread
@@ -85,8 +87,6 @@ endif
 
 set undodir=~/.vimundo
 
-syntax on
-
 set autoindent
 set smartindent
 
@@ -130,7 +130,7 @@ vnoremap j gj
 vnoremap gk k
 vnoremap gj j
 
-vnoremap v $h
+vnoremap v ^$h
 
 autocmd BufNewFile,BufRead *.js setlocal ts=2 sts=2 sw=2
 autocmd BufNewFile,BufRead *.json setlocal ts=2 sts=2 sw=2
