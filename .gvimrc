@@ -1,9 +1,11 @@
 set background=dark
+set linespace=3
 
 if has('win32') || has('win64')
-  set guifont=Inconsolata\ for\ Powerline:h13:cDEFAULT
+  set guifont=Inconsolata_for_Powerline:h13:cDEFAULT
 elseif has('mac')
-  set guifont=Inconsolata\ for\ Powerline:h14
+  set guifont=Ricty_for_Powerline:h16
+  set guifontwide=Ricty_for_Powerline:h17
 endif
 
 source $VIMRUNTIME/delmenu.vim

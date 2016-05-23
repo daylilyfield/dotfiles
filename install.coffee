@@ -43,3 +43,4 @@ link '.gitconfig'
 link '.gitignore-global', '.gitignore'
 
 link '.ctags'
+link '.eslintrc.json'

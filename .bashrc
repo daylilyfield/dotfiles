@@ -1,4 +1,5 @@
 alias la='ls -al'
+alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 
 ANDROID_SDK_HOME="/Users/daylilyfield/Library/Android/sdk"
 
