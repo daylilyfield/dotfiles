@@ -25,6 +25,9 @@ Plug 'vim-scripts/DirDiff.vim'
 Plug 'rking/ag.vim', {'on': 'Ag'}
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
 Plug 'kannokanno/previm'
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+Plug 'jason0x43/vim-js-indent', {'for': ['javascript', 'typescript']}
+Plug 'clausreinke/typescript-tools.vim', {'for': 'typescript'}
 
 call plug#end()
 
@@ -204,3 +207,6 @@ let g:previm_open_cmd = 'open /Applications/Google\ Chrome.app'
 
 " syntastic
 let g:syntastic_javascript_checkers = ['eslint']
+
+" vim-js-indent 
+let g:js_indent_typescript = 1
