@@ -28,6 +28,7 @@ Plug 'kannokanno/previm'
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'jason0x43/vim-js-indent', {'for': ['javascript', 'typescript']}
 Plug 'clausreinke/typescript-tools.vim', {'for': 'typescript'}
+Plug 'fatih/vim-go', {'for': 'go'}
 
 call plug#end()
 

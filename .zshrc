@@ -2,9 +2,11 @@ export LANG=ja_JP.UTF-8
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export PATH=/usr/local/bin:$PATH
 export TERM=xterm-256color
+export GOPATH=$HOME/Workspaces/Go
 
 ANDROID_SDK_HOME="/Users/daylilyfield/Library/Android/sdk"
 
+export PATH=$GOPATH/bin:$PATH
 export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
