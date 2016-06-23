@@ -7,8 +7,11 @@ export GOPATH=$HOME/Workspaces/Go
 ANDROID_SDK_HOME="/Users/daylilyfield/Library/Android/sdk"
 
 export PATH=$GOPATH/bin:$PATH
+export PATH="$HOME/.gobrew/bin:$PATH"
 export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+eval "$(gobrew init -)"
 
 autoload -Uz colors
 colors
@@ -108,3 +111,8 @@ attachToWearable() {
   adb -d forward tcp:5601 tcp:5601
 }
 
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/daylilyfield/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/daylilyfield/google-cloud-sdk/completion.zsh.inc'
