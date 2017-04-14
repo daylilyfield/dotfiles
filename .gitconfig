@@ -7,7 +7,7 @@
 
 [core]
     autocrlf = input
-    editor = /Applications/MacVim.app/Contents/MacOS/mvim -f
+    editor = vim 
 
 [diff]
     tool = vim-diff
@@ -16,7 +16,14 @@
     prompt = false
 
 [difftool "vim-diff"]
-    cmd = /Applications/MacVim.app/Contents/MacOS/mvim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
+    cmd = vim '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
+
+[mergetool "mergepbx"]
+    cmd = mergepbx "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"
+
+[merge "mergepbx"]
+    name = Xcode project files merger
+    driver = mergepbx %O %A %B
 
 [alias]
     co = checkout

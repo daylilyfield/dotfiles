@@ -8,6 +8,7 @@ Plug 'LeafCage/yankround.vim'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'daylilyfield/sexyscroll.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
@@ -27,7 +28,7 @@ Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
 Plug 'kannokanno/previm'
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'jason0x43/vim-js-indent', {'for': ['javascript', 'typescript']}
-Plug 'clausreinke/typescript-tools.vim', {'for': 'typescript'}
+Plug 'Quramy/tsuquyomi', {'for': 'typescript'}
 Plug 'fatih/vim-go', {'for': 'go'}
 
 call plug#end()
@@ -94,8 +95,12 @@ set undodir=~/.vimundo
 set autoindent
 set smartindent
 
+set ttymouse=xterm2
+
 inoremap "" ""<LEFT>
 inoremap '' ''<LEFT>
+inoremap {} {}<LEFT>
+inoremap {} {}<LEFT>
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -137,6 +142,7 @@ vnoremap gj j
 vnoremap v ^$h
 
 autocmd BufNewFile,BufRead *.js setlocal ts=2 sts=2 sw=2
+autocmd BufNewFile,BufRead *.ts setlocal ts=2 sts=2 sw=2
 autocmd BufNewFile,BufRead *.json setlocal ts=2 sts=2 sw=2
 autocmd BufNewFile,BufRead *.coffee setlocal ts=2 sts=2 sw=2
 autocmd BufNewFile,BufRead *.cson setlocal ts=2 sts=2 sw=2
@@ -174,6 +180,7 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " unite settings
 nnoremap <Space>ub :<C-u>Unite buffer<CR>
 nnoremap <Space>ur :<C-u>Unite file_mru<CR>
+nnoremap <Space>uf :<C-u>Unite file<CR>
 nnoremap <Space><Space> :<C-u>Unite file_rec<CR>
 
 " align settings
@@ -194,14 +201,14 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
 " yankround
-nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
+" nmap p <Plug>(yankround-p)
+" xmap p <Plug>(yankround-p)
+" nmap P <Plug>(yankround-P)
+" nmap gp <Plug>(yankround-gp)
+" xmap gp <Plug>(yankround-gp)
+" nmap gP <Plug>(yankround-gP)
+" nmap <C-p> <Plug>(yankround-prev)
+" nmap <C-n> <Plug>(yankround-next)
 
 " previm
 let g:previm_open_cmd = 'open /Applications/Google\ Chrome.app'
@@ -224,4 +231,11 @@ let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
+
+" tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_completion_detail = 1
+let g:tsuquyomi_single_quote_import	= 1
+let g:tsuquyomi_shortest_import_path = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 
