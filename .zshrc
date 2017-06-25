@@ -11,8 +11,6 @@ export PATH="$HOME/.gobrew/bin:$PATH"
 export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-eval "$(gobrew init -)"
-
 autoload -Uz colors
 colors
 
