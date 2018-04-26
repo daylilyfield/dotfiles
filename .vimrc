@@ -152,6 +152,8 @@ autocmd BufNewFile,BufRead *.html setlocal ts=1 sts=1 sw=1
 autocmd BufNewFile,BufRead *.jade setlocal ts=1 sts=1 sw=1
 autocmd BufNewFile,BufRead *.go setlocal ts=2 sts=2 sw=2 noexpandtab
 
+autocmd FileType typescript nmap <buffer> gd <Plug>(TsuquyomiDefinition)
+
 command! -nargs=0 CopyFilePath call s:copy_file_path()
 command! -nargs=0 CopyFileName call s:copy_file_name()
 
