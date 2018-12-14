@@ -133,3 +133,11 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 
 # GVM
 [[ -s "/Users/daylilyfield/.gvm/scripts/gvm" ]] && source "/Users/daylilyfield/.gvm/scripts/gvm"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/daylilyfield/.nodebrew/node/v10.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/daylilyfield/.nodebrew/node/v10.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/daylilyfield/.nodebrew/node/v10.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/daylilyfield/.nodebrew/node/v10.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

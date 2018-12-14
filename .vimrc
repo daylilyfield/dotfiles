@@ -4,14 +4,12 @@ call plug#begin('~/.vim/bundle')
 Plug 'anyakichi/vim-surround'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'vim-scripts/Align', {'on': 'Align'}
-Plug 'LeafCage/yankround.vim'
-Plug 'Shougo/neocomplete'
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/neomru.vim'
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/bundle/YouCompleteMe', 'do': './install.py --all' }
 Plug 'daylilyfield/sexyscroll.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+Plug 'easymotion/vim-easymotion'
 Plug 'morhetz/gruvbox'
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'groenewege/vim-less', {'for': 'less'}
@@ -20,7 +18,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'wavded/vim-stylus', {'for': 'styl'}
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'digitaltoad/vim-jade'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/DirDiff.vim'
 Plug 'rking/ag.vim', {'on': 'Ag'}
@@ -28,12 +25,56 @@ Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
 Plug 'kannokanno/previm'
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'jason0x43/vim-js-indent', {'for': ['javascript', 'typescript']}
-Plug 'Quramy/tsuquyomi', {'for': 'typescript'}
-Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'w0rp/ale'
 
 call plug#end()
 
 syntax on
+
+let mapleader = "\<Space>"
+
+" Mappings
+
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
+
+nnoremap <C-j> 5j
+nnoremap <C-h> 5h
+nnoremap <C-k> 5k
+nnoremap <C-l> 5l
+
+nnoremap k gk
+nnoremap j gj
+nnoremap gk k
+nnoremap gj j
+
+nnoremap <C-n> :bn<CR>
+nnoremap <C-p> :bp<CR>
+
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
+vnoremap <C-j> 5j
+vnoremap <C-h> 5h
+vnoremap <C-k> 5k
+vnoremap <C-l> 5l
+
+vnoremap k gk
+vnoremap j gj
+vnoremap gk k
+vnoremap gj j
+
+vnoremap v ^$h
+
+" Options
 
 set t_Co=256
 set background=dark
@@ -45,9 +86,9 @@ set hlsearch
 set ignorecase
 set smartcase
 set wrapscan
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set shiftround
 set smarttab
 set expandtab
@@ -97,62 +138,19 @@ set smartindent
 
 set ttymouse=xterm2
 
-inoremap "" ""<LEFT>
-inoremap '' ''<LEFT>
-inoremap {} {}<LEFT>
-inoremap {} {}<LEFT>
+" File Type Triggers
 
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+augroup vimrc
+autocmd!
 
-nmap <silent> <Esc><Esc> :nohlsearch<CR>
-
-nnoremap <C-j> 5j
-nnoremap <C-h> 5h
-nnoremap <C-k> 5k
-nnoremap <C-l> 5l
-
-nnoremap k gk
-nnoremap j gj
-nnoremap gk k
-nnoremap gj j
-
-nnoremap gb :bn<CR>
-nnoremap gB :bp<CR>
-
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *zz
-nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
-
-vnoremap <C-j> 5j
-vnoremap <C-h> 5h
-vnoremap <C-k> 5k
-vnoremap <C-l> 5l
-
-vnoremap k gk
-vnoremap j gj
-vnoremap gk k
-vnoremap gj j
-
-vnoremap v ^$h
-
-autocmd BufNewFile,BufRead *.js setlocal ts=2 sts=2 sw=2
-autocmd BufNewFile,BufRead *.ts setlocal ts=2 sts=2 sw=2
-autocmd BufNewFile,BufRead *.json setlocal ts=2 sts=2 sw=2
-autocmd BufNewFile,BufRead *.coffee setlocal ts=2 sts=2 sw=2
-autocmd BufNewFile,BufRead *.cson setlocal ts=2 sts=2 sw=2
-autocmd BufNewFile,BufRead *.styl setlocal ts=2 sts=2 sw=2
 autocmd BufNewFile,BufRead *.xml setlocal ts=1 sts=1 sw=1
 autocmd BufNewFile,BufRead *.html setlocal ts=1 sts=1 sw=1
 autocmd BufNewFile,BufRead *.jade setlocal ts=1 sts=1 sw=1
-autocmd BufNewFile,BufRead *.go setlocal ts=2 sts=2 sw=2 noexpandtab
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab
 
-autocmd FileType typescript nmap <buffer> gd <Plug>(TsuquyomiDefinition)
+augroup END
+
+" Custom Commands
 
 command! -nargs=0 CopyFilePath call s:copy_file_path()
 command! -nargs=0 CopyFileName call s:copy_file_name()
@@ -163,7 +161,7 @@ command! -nargs=0 CopyFileName call s:copy_file_name()
     let @" = l:p
     echo l:p
   endf
-  
+
   function! s:copy_file_name()
     let l:n = expand('%:t')
     let @* = l:n
@@ -171,22 +169,21 @@ command! -nargs=0 CopyFileName call s:copy_file_name()
     echo l:n
   endf
 
+" Plugin Settings
+
+nmap <Leader>b :Buffers<CR>
+nmap <Leader>f :Files<CR>
+
 let g:plugin_dicwin_disable = 1
-
-" neocomplete settings
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-" unite settings
-nnoremap <Space>ub :<C-u>Unite buffer<CR>
-nnoremap <Space>ur :<C-u>Unite file_mru<CR>
-nnoremap <Space>uf :<C-u>Unite file<CR>
-nnoremap <Space><Space> :<C-u>Unite file_rec<CR>
 
 " align settings
 let g:Align_xstrlen=3
+
+" NERDTree
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeMarkBookmarks = 0
+let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeStatusLine = -1
 
 " airline
 let g:airline#extensions#whitespace#enabled = 0
@@ -202,42 +199,24 @@ let g:vim_markdown_folding_disabled = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
-" yankround
-" nmap p <Plug>(yankround-p)
-" xmap p <Plug>(yankround-p)
-" nmap P <Plug>(yankround-P)
-" nmap gp <Plug>(yankround-gp)
-" xmap gp <Plug>(yankround-gp)
-" nmap gP <Plug>(yankround-gP)
-" nmap <C-p> <Plug>(yankround-prev)
-" nmap <C-n> <Plug>(yankround-next)
-
 " previm
 let g:previm_open_cmd = 'open /Applications/Google\ Chrome.app'
 
-" syntastic
-let g:syntastic_javascript_checkers = ['eslint']
-
-" vim-js-indent 
+" vim-js-indent
 let g:js_indent_typescript = 1
 
-" vim-go
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_fmt_command = "goimports"
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-let g:go_list_type = "quickfix"
+" Ale
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
+let g:ale_completion_enabled = 0
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\  '*': ['remove_trailing_lines', 'trim_whitespace'],
+\  'go': ['golint', 'govet', 'errcheck'],
+\  'javascript': ['prettier', 'eslint'],
+\  'typescript': ['prettier', 'tslint']
+\}
 
-" tsuquyomi
-let g:tsuquyomi_disable_quickfix = 1
-let g:tsuquyomi_completion_detail = 1
-let g:tsuquyomi_single_quote_import	= 1
-let g:tsuquyomi_shortest_import_path = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 
+" You Complete Me
+autocmd FileType typescript nmap <buffer> gd :ALEGoToDefinition<CR>

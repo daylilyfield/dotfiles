@@ -15,3 +15,5 @@ android__enable_bluetooth_debug() {
   adb connect localhost:4444
 }
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
