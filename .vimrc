@@ -114,7 +114,7 @@ set wrap
 set laststatus=2
 set cmdheight=2
 set showcmd
-set title
+set notitle
 set cursorline
 set guioptions=erL
 set foldenable
@@ -214,7 +214,11 @@ let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
 \  'go': ['golint', 'govet', 'errcheck'],
 \  'javascript': ['prettier', 'eslint'],
-\  'typescript': ['prettier', 'tslint']
+\  'typescript': ['prettier', 'tslint'],
+\  'css': ['prettier'],
+\  'scss': ['prettier'],
+\  'html': ['prettier'],
+\  'json': ['prettier']
 \}
 
 
