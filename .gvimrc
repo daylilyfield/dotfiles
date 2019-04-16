@@ -4,8 +4,8 @@ set linespace=3
 if has('win32') || has('win64')
   set guifont=Inconsolata_for_Powerline:h13:cDEFAULT
 elseif has('mac')
-  set guifont=Ricty_for_Powerline:h16
-  set guifontwide=Ricty_for_Powerline:h17
+  set guifont=Ricty_Diminished_Discord_with-icons:h16
+  set guifontwide=Ricty_Diminished_Discord_with-icons:h17
 endif
 
 source $VIMRUNTIME/delmenu.vim
@@ -44,4 +44,4 @@ if (filereadable(expand(s:vimpos_file)))
 endif
 
 unlet s:vimpos_file
-" }}} 
+" }}}
