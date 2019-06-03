@@ -26,7 +26,6 @@ Plug 'kannokanno/previm'
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'jason0x43/vim-js-indent', {'for': ['javascript', 'typescript']}
 Plug 'w0rp/ale'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -187,9 +186,6 @@ let g:NERDTreeMarkBookmarks = 0
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeStatusLine = -1
 let g:NERDTreeHighlightCursorline = 0
-
-" NerdTreeSyntaxHighlight
-let g:NERDTreeLimitedSyntax = 1 " .bmp, .c, .coffee, .cpp, .css, .erb, .go, .hs, .html, .java, .jpg, .js, .json, .jsx, .less, .lua, .markdown, .md, .php, .png, .pl, .py, .rb, .rs, .scala, .scss, .sh, .sql, .vim
 
 " airline
 let g:airline#extensions#whitespace#enabled = 0
