@@ -6,7 +6,6 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'vim-scripts/Align', {'on': 'Align'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/bundle/YouCompleteMe', 'do': './install.py --all' }
 Plug 'daylilyfield/sexyscroll.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'easymotion/vim-easymotion'
@@ -27,6 +26,7 @@ Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'jason0x43/vim-js-indent', {'for': ['javascript', 'typescript']}
 Plug 'w0rp/ale'
 Plug 'ryanoasis/vim-devicons'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 call plug#end()
 
@@ -223,8 +223,10 @@ let g:ale_fixers = {
 \  'json': ['prettier']
 \}
 
-" You Complete Me
-autocmd FileType typescript nmap <buffer> gd :ALEGoToDefinition<CR>
+
+" Coc
+inoremap <silent><expr> <C-Space> coc#refresh()
+imap <C-@> <C-Space>
 
 " Devicon
 let g:webdevicons_conceal_nerdtree_brackets = 1

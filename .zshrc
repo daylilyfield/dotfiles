@@ -1,5 +1,5 @@
 export LANG=ja_JP.UTF-8
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+export EDITOR=mvim
 export PATH=/usr/local/bin:$PATH
 export TERM=xterm-256color
 export GOPATH=$HOME/Workspaces/Go
@@ -88,8 +88,8 @@ setopt extended_glob
 
 bindkey '^R' history-incremental-pattern-search-backward
 
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vi='env LANG=ja_JP.UTF-8 mvim -v "$@"'
+alias vim='env LANG=ja_JP.UTF-8 mvim -v "$@"'
 alias la='ls -al'
 alias ll='ls -l'
 alias rm='rm -i'
@@ -141,3 +141,5 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/daylilyfield/.nodebrew/node/v10.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/daylilyfield/.nodebrew/node/v10.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
