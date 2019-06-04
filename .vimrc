@@ -112,6 +112,7 @@ set number
 set ruler
 set nolist
 set wrap
+set signcolumn=yes
 set laststatus=2
 set cmdheight=2
 set showcmd
@@ -225,8 +226,27 @@ let g:ale_fixers = {
 
 
 " Coc
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <C-Space> coc#refresh()
+
 imap <C-@> <C-Space>
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+nmap <leader>rn <Plug>(coc-rename)
 
 " Devicon
 let g:webdevicons_conceal_nerdtree_brackets = 1
