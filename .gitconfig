@@ -1,13 +1,13 @@
 [user]
-    name = daylilyfield
-    email = devlilyfield@gmail.com
+	name = daylilyfield
+	email = daylilyfield@gmail.com
 
 [url "https://"]
     insteadof = git://
 
 [core]
     autocrlf = input
-    editor = vim 
+    editor = vim
 
 [diff]
     tool = vim-diff

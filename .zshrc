@@ -10,6 +10,7 @@ export PATH=$GOPATH/bin:$PATH
 export PATH="$HOME/.gobrew/bin:$PATH"
 export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 autoload -Uz colors
 colors
@@ -133,13 +134,3 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 
 # GVM
 [[ -s "/Users/daylilyfield/.gvm/scripts/gvm" ]] && source "/Users/daylilyfield/.gvm/scripts/gvm"
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/daylilyfield/.nodebrew/node/v10.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/daylilyfield/.nodebrew/node/v10.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/daylilyfield/.nodebrew/node/v10.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/daylilyfield/.nodebrew/node/v10.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
