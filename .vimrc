@@ -20,15 +20,12 @@ Plug 'vim-scripts/DirDiff.vim'
 Plug 'rking/ag.vim', {'on': 'Ag'}
 Plug 'vim-scripts/TaskList.vim', {'on': 'TaskList'}
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
-Plug 'jason0x43/vim-js-indent', {'for': ['javascript', 'typescript']}
 Plug 'w0rp/ale'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-Plug 'Quramy/vim-js-pretty-template'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'leafOfTree/vim-svelte-plugin', { 'for': 'svelte' }
 Plug 'liuchengxu/vim-clap', { 'do': { -> clap#installer#force_download() } }
-
 
 call plug#end()
 
@@ -253,14 +250,14 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 1
 
-" JS Pretty Template
-autocmd FileType typescript JsPreTmpl
-autocmd FileType typescript syn clear foldBraces
-
 " vim-clap
 nmap <Leader><Space>b :Clap buffers<CR>
 nmap <Leader><Space>f :Clap files<CR>
+nmap <Leader><Space>d :Clap filer<CR>
 
 " EasyMotion
 map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" vim-svelte-plugin
+let g:vim_svelte_plugin_use_typescript = 1
