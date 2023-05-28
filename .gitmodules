@@ -1,3 +1,0 @@
-[submodule ".vim/bundle/vim-plug/autoload"]
-	path = .vim/bundle/vim-plug/autoload
-	url = https://github.com/junegunn/vim-plug.git

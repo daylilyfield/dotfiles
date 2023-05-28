@@ -4,7 +4,7 @@ export PATH=/usr/local/bin:$PATH
 export TERM=xterm-256color
 export GOPATH=$HOME/Workspaces/Go
 
-ANDROID_SDK_HOME="/Users/daylilyfield/Library/Android/sdk"
+ANDROID_SDK_HOME="~/Library/Android/sdk"
 
 export PATH=$GOPATH/bin:$PATH
 export PATH="$HOME/.gobrew/bin:$PATH"
@@ -134,3 +134,5 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 
 # GVM
 [[ -s "/Users/daylilyfield/.gvm/scripts/gvm" ]] && source "/Users/daylilyfield/.gvm/scripts/gvm"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
