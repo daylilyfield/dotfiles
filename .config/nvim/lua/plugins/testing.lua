@@ -31,11 +31,11 @@ return {
 			end, { desc = "Open [T]est [O]uput" })
 
 			vim.keymap.set("n", "<C-p>tp", function()
-				neotest.output_panel.open({})
+				neotest.output_panel.open()
 			end, { desc = "Open [T]est [P]anel" })
 
 			vim.keymap.set("n", "<C-p>ts", function()
-				neotest.summary.open({})
+				neotest.summary.open()
 			end, { desc = "Open [T]est [S]ummary" })
 
 			neotest.setup({

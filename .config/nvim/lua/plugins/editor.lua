@@ -18,6 +18,10 @@ return {
 	},
 
 	{
+		"delphinus/vim-firestore",
+	},
+
+	{
 		"windwp/nvim-autopairs",
 		dependencies = {
 			"hrsh7th/nvim-cmp",
