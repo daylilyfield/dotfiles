@@ -141,7 +141,9 @@ return {
 			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 			return {
 				sources = {
-					formatting.prettier,
+					formatting.prettier.with({
+						extra_filetypes = { "svelte", "toml" },
+					}),
 					formatting.stylua,
 					diagnostics.eslint_d.with({
 						condition = function(utils)
