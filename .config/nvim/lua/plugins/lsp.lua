@@ -19,6 +19,7 @@ return {
 				"lua_ls",
 				"tsserver",
 				"svelte",
+				"pyright",
 			},
 		},
 	},
@@ -128,9 +129,11 @@ return {
 	},
 
 	{
-		"jose-elias-alvarez/null-ls.nvim",
+		-- "jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
+      "nvimtools/none-ls-extras.nvim",
 			"williamboman/mason.nvim",
 			"jose-elias-alvarez/typescript.nvim",
 		},
@@ -143,13 +146,17 @@ return {
 				sources = {
 					formatting.prettier.with({
 						extra_filetypes = { "svelte", "toml" },
+						disabled_filetypes = { "handlebars" },
 					}),
 					formatting.stylua,
-					diagnostics.eslint_d.with({
+					formatting.black,
+          require("none-ls.diagnostics.eslint_d").with({
+					-- diagnostics.eslint_d.with({
 						condition = function(utils)
-							return utils.root_has_file(".eslintrc.js")
+							return utils.root_has_file(".eslintrc.js") or utils.root_has_file("eslint.config.mjs")
 						end,
 					}),
+					-- diagnostics.pylint,
 					require("typescript.extensions.null-ls.code-actions"),
 				},
 				on_attach = function(current_client, bufnr)
@@ -177,9 +184,11 @@ return {
 		"jay-babu/mason-null-ls.nvim",
 		opts = {
 			ensure_installed = {
-				"prettier", -- ts/js formatter
-				"stylua", -- lua formatter
-				"eslint_d", -- ts/js linter
+				"prettier",
+				"stylua",
+				"eslint_d",
+				"black",
+				"pylint",
 			},
 			automatic_installation = true,
 		},

@@ -1,17 +1,3 @@
-export LANG=ja_JP.UTF-8
-export EDITOR=mvim
-export PATH=/usr/local/bin:$PATH
-export TERM=xterm-256color
-export GOPATH=$HOME/Workspaces/Go
-
-ANDROID_SDK_HOME="~/Library/Android/sdk"
-
-export PATH=$GOPATH/bin:$PATH
-export PATH="$HOME/.gobrew/bin:$PATH"
-export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 autoload -Uz colors
 colors
 
@@ -129,10 +115,5 @@ attachToWearable() {
 }
 
 # Google Cloud SDK
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
-# GVM
-[[ -s "/Users/daylilyfield/.gvm/scripts/gvm" ]] && source "/Users/daylilyfield/.gvm/scripts/gvm"
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
